@@ -1,0 +1,118 @@
+#cloud-config
+hostname: xiwpc
+manage_etc_hosts: true
+timezone: Asia/Shanghai  # 设置时区
+
+users:
+  - name: xiw
+    uid: 1001
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, sudo
+    home: /home/xiw
+    shell: /bin/bash
+    lock_passwd: false
+    passwd: $6$7jB38fyftpWeL4Lb$UlRdXYOiciiOd6ixzzrn7O4kaOJI3NfgxMXzqIHHTv3ASujqd3t.GkBQn1pBJduzPUGjEL4mBWKD30f5dYstL1
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCusOwS7KZPu0eTZC8X/n7CS7AfnQjMiK6UZtWHfKomuxTK+trp/KzHTAzEghvfFMMMKi+zlG1K5tgolErYtZL+k2+BuyseANBlubCL/WkZ2zBRSYAkmtnqu5ALn6Nt9BbER51Py6AzrzPbPd4xSA4EOA4R51zDKHe3/dnmEy6tqxVCxZKEJ6T4CKfJQQteXaQ/S7WTYgOY6AoC4Rwq2lwAf6ZDMmV9+optR9V96JoGSjyz+fKadfZfeSERONRjmi+QdzvmzVCDUQ6zmylYAcJBSaL4hrw/CJTvT1J6OEKEXGoFCAhehMS6k1huVeNfWaGGsE3RdOOG0LM2RH2Wrula1fnEztLdLGYoI0EHXQUQ5Km31mrcf7JBiU3czy+6xGAHIBAqKo9s3B9Qxv914aeVa9TIEevbnFXwXT9owpMVblePk07HPS3od1TYZA2Ct9S8wkGvRI3Fq6oNJkyVvbbz6ICCejo438kG8n0xCPQyxbPPk5vvWeDCKOTYQI3u5JQWsAid/H1YY1RjR2QbpVgQgNiU9m+RW7xMArZiBPq3r9uFpczmWiVIaxXaOb1/XHZr/Guzul2bRuOuiqgAhJNrbjk4lXguYfowCD+RRZZUz2TJie5g/vZni97NmY5F9CSLIvW32Sa/fztN1zDr4nqsSCz8+invRztkhm9WzP5cJQ== zhongxiwang@live.com
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDdYsg/rgXg/7tqmwlS6tqVzH4VBh3hnqDHpospVO9S78bGNoXwJv9Io1Xmtl0IsVZrrCUdrk0EcTMDkeFW7ebjVc9syd9pYpm7ZXKgD9IDJ4T5h/OwUCQY4oavhhX24QXKCH4BgiGTMvLdnPPLJ1tJ53rpZZnvRKMjs3+mkBa74Uvrg38S4xOCeEUw0TrOE5GbjSyrNuTfyxfWXW85hpteNGBvLFRdlJyG+CiTc6JugZ8AYk4DI1FGgED2S+HIdmuB1Xcv81qgAYj/MYgp4mpE1Mv5+gDkuJVWSHwK926Au0Te/OD5xJy2qUa5w99XCPR6x65CLV+byfyf6EQ26NjjushvUg5WL8FaQn2w/K+fK/QxZWfG9DNjUmxiouTAmKR46Abp5SylNUXBwQ+9OCoMlKLqbhokaxyaD/HE2O2G+8fo1MJpcEOsK3muaH702CLrovyp32B/V/2ptpNtg6MaRzd8CrKwXGZDQiJoQie6aDHYkg7xbhLdzXIJnMfn1WYE7rN3CSQ9k6i/BqAGHBMKyDfWyqrCTe7w0SxA8LBiTwh9ZQIHnyV70b4rG+VTZDhBRZvn5RsJG5gaq+1RWE7+bOLlbploCXGy9L3NUAI0ZiZ5TgWlxrZRbb0EraP/qjC5MDteO4QzXtoHxOr9XMGD70ZISF8rs/YJCd79FIFDnQ== zhongxiwnag@foxmail.com
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFAsDJVhCyrGTaVu58cPrqXkf+ki6uVXDKWIFlUyB4DU your_email@example.com
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDIgDp9qWdBl2E/g2f0OTabRNzLITWD5zs9evo4pfDINf+B7ofpV2HJiZQgxbkNe+G7KoKllX//Ig8MbJVGGLxSjlhNaCPQm/Jt+Kn20zMoD6WFJS7LWa6nvnaEaCK0HVvy3ReR7LdtGdj+AvKRVbii1yUulPY9jGEgl1I/tnouzDUqvPvb85y2THbOGerin7U7UJw2zluscG7N/xw4epaTsQV/9PKP5LnYqnjLdxWPotpMAAl7odjvtRUww1BzJNUfZUWJ7Inbqd+zYL5e84RWkrGC75zjgQZh2NzoMlCG8wq/Ee9VsTB00sN4t0xkKXabp9PubxLY6LarwVbTtEmSFdzs4kpgj2IYCRavF9uA9pU9GVkkP3EmNtJwQNP9AzRahgyVBXKwBaTVAKROui1LIsvJeKPMhJ66y3neHR6pthjdYgabrnOkz2CWWbVwbYXLc/dIi6EFKIOXxPWvQAKgOje1oZrTFRq90mT/cgL0Kp8fxpugSOHPRZIf7RvxiK00vTWERUA0VfQHe4/CRcLBBv+kfTo7DPOdkB/stPznkZQzK6klKrJQjShv8YUUH1hUFEWiyUmWKgYDECDLXdTCKktjSWT5CgON3O3oHDLcgkXqTj50UGYMM7pDMlfSzTO8Xy4/QSolXwqpLGIL/vHog6XuWNWHVI+hDl2YUXLKeQ== zhongxiwang@foxmail.com
+
+  - name: root
+    uid: 1000
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, sudo
+    home: /root
+    shell: /bin/bash
+    lock_passwd: false
+    passwd: $6$7jB38fyftpWeL4Lb$UlRdXYOiciiOd6ixzzrn7O4kaOJI3NfgxMXzqIHHTv3ASujqd3t.GkBQn1pBJduzPUGjEL4mBWKD30f5dYstL1
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCusOwS7KZPu0eTZC8X/n7CS7AfnQjMiK6UZtWHfKomuxTK+trp/KzHTAzEghvfFMMMKi+zlG1K5tgolErYtZL+k2+BuyseANBlubCL/WkZ2zBRSYAkmtnqu5ALn6Nt9BbER51Py6AzrzPbPd4xSA4EOA4R51zDKHe3/dnmEy6tqxVCxZKEJ6T4CKfJQQteXaQ/S7WTYgOY6AoC4Rwq2lwAf6ZDMmV9+optR9V96JoGSjyz+fKadfZfeSERONRjmi+QdzvmzVCDUQ6zmylYAcJBSaL4hrw/CJTvT1J6OEKEXGoFCAhehMS6k1huVeNfWaGGsE3RdOOG0LM2RH2Wrula1fnEztLdLGYoI0EHXQUQ5Km31mrcf7JBiU3czy+6xGAHIBAqKo9s3B9Qxv914aeVa9TIEevbnFXwXT9owpMVblePk07HPS3od1TYZA2Ct9S8wkGvRI3Fq6oNJkyVvbbz6ICCejo438kG8n0xCPQyxbPPk5vvWeDCKOTYQI3u5JQWsAid/H1YY1RjR2QbpVgQgNiU9m+RW7xMArZiBPq3r9uFpczmWiVIaxXaOb1/XHZr/Guzul2bRuOuiqgAhJNrbjk4lXguYfowCD+RRZZUz2TJie5g/vZni97NmY5F9CSLIvW32Sa/fztN1zDr4nqsSCz8+invRztkhm9WzP5cJQ== zhongxiwang@live.com
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDdYsg/rgXg/7tqmwlS6tqVzH4VBh3hnqDHpospVO9S78bGNoXwJv9Io1Xmtl0IsVZrrCUdrk0EcTMDkeFW7ebjVc9syd9pYpm7ZXKgD9IDJ4T5h/OwUCQY4oavhhX24QXKCH4BgiGTMvLdnPPLJ1tJ53rpZZnvRKMjs3+mkBa74Uvrg38S4xOCeEUw0TrOE5GbjSyrNuTfyxfWXW85hpteNGBvLFRdlJyG+CiTc6JugZ8AYk4DI1FGgED2S+HIdmuB1Xcv81qgAYj/MYgp4mpE1Mv5+gDkuJVWSHwK926Au0Te/OD5xJy2qUa5w99XCPR6x65CLV+byfyf6EQ26NjjushvUg5WL8FaQn2w/K+fK/QxZWfG9DNjUmxiouTAmKR46Abp5SylNUXBwQ+9OCoMlKLqbhokaxyaD/HE2O2G+8fo1MJpcEOsK3muaH702CLrovyp32B/V/2ptpNtg6MaRzd8CrKwXGZDQiJoQie6aDHYkg7xbhLdzXIJnMfn1WYE7rN3CSQ9k6i/BqAGHBMKyDfWyqrCTe7w0SxA8LBiTwh9ZQIHnyV70b4rG+VTZDhBRZvn5RsJG5gaq+1RWE7+bOLlbploCXGy9L3NUAI0ZiZ5TgWlxrZRbb0EraP/qjC5MDteO4QzXtoHxOr9XMGD70ZISF8rs/YJCd79FIFDnQ== zhongxiwnag@foxmail.com
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFAsDJVhCyrGTaVu58cPrqXkf+ki6uVXDKWIFlUyB4DU your_email@example.com
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDIgDp9qWdBl2E/g2f0OTabRNzLITWD5zs9evo4pfDINf+B7ofpV2HJiZQgxbkNe+G7KoKllX//Ig8MbJVGGLxSjlhNaCPQm/Jt+Kn20zMoD6WFJS7LWa6nvnaEaCK0HVvy3ReR7LdtGdj+AvKRVbii1yUulPY9jGEgl1I/tnouzDUqvPvb85y2THbOGerin7U7UJw2zluscG7N/xw4epaTsQV/9PKP5LnYqnjLdxWPotpMAAl7odjvtRUww1BzJNUfZUWJ7Inbqd+zYL5e84RWkrGC75zjgQZh2NzoMlCG8wq/Ee9VsTB00sN4t0xkKXabp9PubxLY6LarwVbTtEmSFdzs4kpgj2IYCRavF9uA9pU9GVkkP3EmNtJwQNP9AzRahgyVBXKwBaTVAKROui1LIsvJeKPMhJ66y3neHR6pthjdYgabrnOkz2CWWbVwbYXLc/dIi6EFKIOXxPWvQAKgOje1oZrTFRq90mT/cgL0Kp8fxpugSOHPRZIf7RvxiK00vTWERUA0VfQHe4/CRcLBBv+kfTo7DPOdkB/stPznkZQzK6klKrJQjShv8YUUH1hUFEWiyUmWKgYDECDLXdTCKktjSWT5CgON3O3oHDLcgkXqTj50UGYMM7pDMlfSzTO8Xy4/QSolXwqpLGIL/vHog6XuWNWHVI+hDl2YUXLKeQ== zhongxiwang@foxmail.com
+
+ssh_pwauth: true
+
+write_files:
+  - path: /root/install_k8s.sh
+    content: |
+      #!/bin/bash
+
+      # user info
+      IP_ADDR=$(hostname -I | awk '{print $1}')
+      NODE_NAME=$(hostname)
+
+      #sudo ssh-keygen -t rsa -C "zhongxiwang@live.com"
+      echo -e "RSAAuthentication yes\nPubkeyAuthentication yes\nPermitRootLogin yes\nAuthorizedKeysFile .ssh/authorized_keys" |cat >> /etc/ssh/sshd_config
+      service ssh restart
+      echo -e "$IP_ADDR $NODE_NAME" | cat >> /etc/hosts
+
+      # install docker
+      #sudo apt-get update
+      #sudo apt install -y docker.io 
+      mkdir /etc/containerd
+      containerd config default > /etc/containerd/config.toml
+      sudo sed -i 's|registry.k8s.io/pause:3.8|registry.aliyuncs.com/google_containers/pause:3.9|g' /etc/containerd/config.toml
+      service containerd restart
+
+      # install kubeadm
+      sudo apt-get install -y ca-certificates curl software-properties-common apt-transport-https curl
+      curl -s https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add -
+      sudo tee /etc/apt/sources.list.d/kubernetes.list <<EOF
+      deb https://mirrors.aliyun.com/kubernetes/apt/ kubernetes-xenial main
+      EOF
+
+      sudo apt-get update
+      sudo apt install -y kubectl kubelet kubeadm
+
+      sudo tee /root/init.default.yaml <<EOF
+      apiVersion: kubeadm.k8s.io/v1beta3
+      bootstrapTokens:
+      - groups:
+        - system:bootstrappers:kubeadm:default-node-token
+        token: abcdef.0123456789abcdef
+        ttl: 24h0m0s
+        usages:
+        - signing
+        - authentication
+      kind: InitConfiguration
+      localAPIEndpoint:
+        advertiseAddress: 1.2.3.4
+        bindPort: 6443
+      nodeRegistration:
+        criSocket: unix:///var/run/docker.sock
+        imagePullPolicy: IfNotPresent
+        name: master
+        taints: null
+      ---
+      apiServer:
+        timeoutForControlPlane: 4m0s
+      apiVersion: kubeadm.k8s.io/v1beta3
+      certificatesDir: /etc/kubernetes/pki
+      clusterName: kubernetes
+      controllerManager: {}
+      dns: {}
+      etcd:
+        local:
+          dataDir: /var/lib/etcd
+      imageRepository: registry.aliyuncs.com/google_containers
+      kind: ClusterConfiguration
+      kubernetesVersion: 1.28.0
+      networking:
+        dnsDomain: cluster.local
+        serviceSubnet: 10.96.0.0/12
+      scheduler: {}
+      EOF
+
+      sudo sed -i "s|1.2.3.4|$IP_ADDR|g" /root/init.default.yaml
+      sudo sed -i "s|master|$NODE_NAME|g" /root/init.default.yaml
+      
+      # kubeadm init --config=init.default.yaml --v=5
+    permissions: '0755'
+
+runcmd:
+  - sudo cp /home/xiw/.ssh/* /root/.ssh/
+  - sudo apt install net-tools
+  - hostnamectl set-hostname NodeName
+  - sudo /root/install_k8s.sh

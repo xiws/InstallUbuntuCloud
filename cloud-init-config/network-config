@@ -1,0 +1,16 @@
+# network:
+#   version: 2
+#   renderer: networkd
+#   ethernets:
+#     enp0s3:
+#       dhcp4: no
+#       addresses:
+#         - 192.168.5.11/24         # 静态 IPv4
+#       gateway4: 192.168.1.1
+#       nameservers:
+#         addresses:
+#           - 202.38.93.240
+#           - 8.8.8.8
+#           - dns1.hichina.com
+#           - dns2.hichina.com
+#           - 2001:4860:4860::8888
